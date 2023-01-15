@@ -1,5 +1,5 @@
-// const { ModuleFederationPlugin } = require("webpack").container;
-// const deps = require("./package.json").dependencies;
+const { ModuleFederationPlugin } = require("webpack").container;
+const deps = require("./package.json").dependencies;
 
 module.exports = () => ({
   webpack: {
@@ -10,28 +10,28 @@ module.exports = () => ({
     },
     plugins: {
       add: [
-        // new ModuleFederationPlugin({
-        //   name: "home",
-        //   filename: "remoteEntry.js",
-        //   remotes: {
-        //     // cardpicker: "cardpicker@http://localhost:3000/remoteEntry.js",
-        //     // topnumber: "topnumber@http://localhost:3002/remoteEntry.js"
-        //   },
-        //   shared: {
-        //     ...deps,
-        //     // ui: {
-        //     //   singleton: true,
-        //     // },
-        //     react: {
-        //       singleton: true,
-        //       requiredVersion: deps.react,
-        //     },
-        //     'react-dom': {
-        //       singleton: true,
-        //       requiredVersion: deps["react-dom"],
-        //     },
-        //   },
-        // }),
+        new ModuleFederationPlugin({
+          name: "home",
+          filename: "remoteEntry.js",
+          remotes: {
+            // cardpicker: "cardpicker@http://localhost:3000/remoteEntry.js",
+            // topnumber: "topnumber@http://localhost:3002/remoteEntry.js"
+          },
+          shared: {
+            ...deps,
+            // ui: {
+            //   singleton: true,
+            // },
+            react: {
+              singleton: true,
+              requiredVersion: deps.react,
+            },
+            'react-dom': {
+              singleton: true,
+              requiredVersion: deps["react-dom"],
+            },
+          },
+        }),
       ]
     }
   },
