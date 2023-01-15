@@ -13,9 +13,8 @@ module.exports = () => ({
         new ModuleFederationPlugin({
           name: "home",
           filename: "remoteEntry.js",
-          remotes: {
-            // cardpicker: "cardpicker@http://localhost:3000/remoteEntry.js",
-            // topnumber: "topnumber@http://localhost:3002/remoteEntry.js"
+          exposes: {
+            "./homepage": "./src/components/index.tsx"
           },
           shared: {
             ...deps,
