@@ -1,11 +1,13 @@
-import './App.css';
 import HomePage from './components';
+import DetailPokemon from './components/detailPokemon';
+import DetailPokemonItem from './components/detailPokemonItem';
 
 function App() {
   return (
-    <div className="App bg-slate-700 h-[100vh]">
+    <div>
       <div className='text-white text-2xl'>
         <HomePage />
+        {/* <DetailPokemon /> */}
       </div>
     </div>
   );

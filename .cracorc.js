@@ -14,7 +14,10 @@ module.exports = () => ({
           name: "home",
           filename: "remoteEntry.js",
           exposes: {
-            "./homepage": "./src/components/index.tsx"
+            "./homepage": "./src/components/index.tsx",
+            "./pokemonitem": "./src/components/pokemonItem.tsx",
+            "./detailpokemon": "./src/components/detailPokemon.tsx",
+            "./appPoke": "./src/App.tsx"
           },
           shared: {
             ...deps,
